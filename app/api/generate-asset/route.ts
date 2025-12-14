@@ -1,9 +1,8 @@
 import { NextResponse } from 'next/server';
-import { GoogleGenAI } from "@google/genai";
-
+import { GoogleGenerativeAI } from "@google/generative-ai";
 // 1. Initialize Google Client (For Text Enhancement only)
 // We use 'gemini-1.5-flash' because it is fast, free, and your key DEFINITELY works for it.
-const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
 
 export async function POST(req: Request) {
   try {
